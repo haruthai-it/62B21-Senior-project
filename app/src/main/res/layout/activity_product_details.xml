@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:theme="@style/AppTheme"
+    tools:context=".ui.view.product.AddProductActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:id="@+id/svProductDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:id="@+id/rlProductExpired"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:orientation="vertical"
+                    app:cardCornerRadius="8dp"
+                    app:strokeColor="@color/greyWhite"
+                    app:strokeWidth="1dp"
+                    app:cardElevation="0dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageProduct"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:tint="@color/greyWhite"
+                    android:src="@drawable/add_image"
+                    android:scaleType="centerInside"
+                    android:clickable="true"/>
+                </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvProductExpired"
+                        style="@style/TextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="20dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/greyWhite"
+                        app:cardBackgroundColor="@color/white"
+                        app:contentPadding="16dp"
+                        app:cardCornerRadius="5dp"
+                        app:strokeWidth="1dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/cvProductBB">
+
+                            <TextView
+                                android:id="@+id/tvProductExpired"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:focusableInTouchMode="false"
+                                android:hint="@string/hint_expired"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/grey"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/tvProductExpiredDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvProductExpired"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginBottom="3dp"
+                                android:hint="@string/hint_expired_date"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                        </RelativeLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilProductTitle"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_below="@+id/rlProductExpired"
+                android:layout_marginRight="20dp"
+                android:hint="@string/hint_title"
+                app:hintTextColor="@color/deepGrey"
+                app:boxStrokeColor="@color/deepGrey"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/black"
+                app:errorEnabled="true">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etProductTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textAutoCorrect|textCapSentences"
+                    android:textCursorDrawable="@null"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.card.MaterialCardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cvProductBrand"
+                style="@style/TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tilProductTitle"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="20dp"
+                card_view:checkedIcon="@color/pink"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/greyWhite"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:contentPaddingBottom="16dp"
+                card_view:contentPaddingTop="16dp"
+                card_view:cardCornerRadius="5dp"
+                card_view:strokeWidth="1dp">
+
+                <RelativeLayout
+                    android:id="@+id/rlProductBrand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tilProductTitle"
+                    android:clickable="true">
+
+                    <TextView
+                        android:id="@+id/tvProductBrand"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="5dp"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/hint_brand"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/grey"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tvNotificationTimeText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="center_vertical|right"
+                        android:layout_toStartOf="@id/ivProductBrandIcon"
+                        android:layout_toEndOf="@id/tvProductBrand"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/hint_brand"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/grey"
+                        android:textSize="16sp"
+                        android:visibility="invisible"/>
+
+                    <ImageView
+                        android:id="@+id/ivProductBrandIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:tint="@color/grey"
+                        android:src="@drawable/round_chevron_right_black_24"/>
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+<!--            <com.google.android.material.card.MaterialCardView xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+<!--                android:id="@+id/tilProductCategory"-->
+<!--                style="@style/TextInputLayout"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@id/cvProductBrand"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:layout_marginRight="20dp"-->
+<!--                card_view:checkedIcon="@color/pink"-->
+<!--                app:cardElevation="0dp"-->
+<!--                app:strokeColor="@color/greyWhite"-->
+<!--                card_view:cardBackgroundColor="@color/white"-->
+<!--                card_view:contentPaddingBottom="16dp"-->
+<!--                card_view:contentPaddingTop="16dp"-->
+<!--                card_view:cardCornerRadius="5dp"-->
+<!--                card_view:strokeWidth="1dp">-->
+
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/rlProductCategory"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@id/tilProductCategory"-->
+<!--                    android:clickable="true">-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tvProductCategory"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_centerVertical="true"-->
+<!--                        android:layout_alignParentStart="true"-->
+<!--                        android:layout_marginStart="16dp"-->
+<!--                        android:layout_marginEnd="5dp"-->
+<!--                        android:focusableInTouchMode="false"-->
+<!--                        android:hint="@string/hint_category"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textColorHint="@color/grey"-->
+<!--                        android:textSize="16sp" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tvProductCategoryText"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="5dp"-->
+<!--                        android:layout_marginEnd="16dp"-->
+<!--                        android:gravity="center_vertical|right"-->
+<!--                        android:layout_toStartOf="@id/ivProductCategoryIcon"-->
+<!--                        android:layout_toEndOf="@id/tvProductCategory"-->
+<!--                        android:focusableInTouchMode="false"-->
+<!--                        android:hint="@string/hint_category"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textColorHint="@color/grey"-->
+<!--                        android:textSize="16sp"-->
+<!--                        android:visibility="invisible"/>-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/ivProductCategoryIcon"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_alignParentEnd="true"-->
+<!--                        android:layout_centerVertical="true"-->
+<!--                        android:layout_marginEnd="16dp"-->
+<!--                        android:tint="@color/grey"-->
+<!--                        android:src="@drawable/round_chevron_right_black_24"/>-->
+
+<!--                </RelativeLayout>-->
+
+<!--            </com.google.android.material.card.MaterialCardView>-->
+
+            <com.google.android.material.card.MaterialCardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cvProductOpened"
+                style="@style/TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cvProductBrand"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="20dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/greyWhite"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:contentPaddingBottom="16dp"
+                card_view:contentPaddingTop="16dp"
+                card_view:cardCornerRadius="5dp"
+                card_view:strokeWidth="1dp">
+
+                <RelativeLayout
+                    android:id="@+id/rlProductOpened"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cvProductBrand"
+                    android:clickable="true">
+
+                    <TextView
+                        android:id="@+id/tvProductOpened"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="5dp"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/hint_opened"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/grey"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tvProductOpenedDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="center_vertical|right"
+                        android:layout_toStartOf="@id/ivDeleteProductOpened"
+                        android:layout_toEndOf="@id/tvProductOpened"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/hint_opened_date"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/grey"
+                        android:textSize="16sp"
+                        android:visibility="invisible"/>
+
+                    <ImageView
+                        android:id="@+id/ivProductOpenedIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:tint="@color/grey"
+                        android:src="@drawable/round_calendar_black_24"/>
+
+                    <ImageView
+                        android:id="@+id/ivDeleteProductOpened"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/round_close_black_24"
+                        android:visibility="gone" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvProductPAO"
+                style="@style/TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cvProductOpened"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="20dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/greyWhite"
+                app:cardBackgroundColor="@color/white"
+                app:contentPadding="16dp"
+                app:cardCornerRadius="5dp"
+                app:strokeWidth="1dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cvProductOpened">
+
+                    <TextView
+                        android:id="@+id/tvProductPAO"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/hint_pao"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/grey"
+                        android:textSize="16sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvProductPAO"
+                        android:layout_width="match_parent"
+                        android:layout_height="164dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@id/tvProductPAO"
+                        android:columnWidth="120dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        />
+<!--                    android:horizontalSpacing="4dp"-->
+<!--                    android:numColumns="5"-->
+<!--                    android:stretchMode="columnWidth"-->
+<!--                    android:verticalSpacing="4dp"-->
+<!--                    android:listSelector="@color/blue"-->
+
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cvProductBB"
+                style="@style/TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cvProductPAO"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="20dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/greyWhite"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:contentPaddingBottom="16dp"
+                card_view:contentPaddingTop="16dp"
+                card_view:cardCornerRadius="5dp"
+                card_view:strokeWidth="1dp">
+
+                <RelativeLayout
+                    android:id="@+id/rlProductBb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cvProductPAO"
+                    android:clickable="true">
+
+                    <TextView
+                        android:id="@+id/tvProductBB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="5dp"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/hint_bb"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/grey"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tvProductBBDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="center_vertical|right"
+                        android:layout_toStartOf="@id/ivDeleteProductBB"
+                        android:layout_toEndOf="@id/tvProductBB"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/hint_bb_date"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/grey"
+                        android:textSize="16sp"
+                        android:visibility="invisible"/>
+
+                    <ImageView
+                        android:id="@+id/ivProductBBIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:tint="@color/grey"
+                        android:src="@drawable/round_calendar_black_24"/>
+
+                    <ImageView
+                        android:id="@+id/ivDeleteProductBB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/round_close_black_24"
+                        android:visibility="gone" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cvProductNote"
+                style="@style/TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cvProductBB"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="20dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/greyWhite"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="5dp"
+                card_view:contentPadding="16dp"
+                card_view:strokeWidth="1dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cvProductBB">
+                    <TextView
+                        android:id="@+id/tvProductNote"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/hint_note"
+                        android:maxLines="7"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/grey"
+                        android:textSize="16sp" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etProductNote"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:inputType="textAutoCorrect|textCapSentences|textMultiLine"
+                        android:hint="@string/hint_edit_note"
+                        android:textCursorDrawable="@null"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnProductDelete"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cvProductNote"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/button_gradient_background"
+                android:text="@string/delete_product"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="invisible"/>
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

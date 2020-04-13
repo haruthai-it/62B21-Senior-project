@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llSettings"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:divider="@drawable/divider_horizontal"
+    android:orientation="vertical"
+    android:showDividers="middle|end">
+
+    <TextView
+        android:id="@+id/tvNotificationTitle"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="center_vertical"
+        android:drawablePadding="9.95dp"
+        android:drawableStart="@drawable/round_notifications_none_black_24"
+        android:drawableEnd="@drawable/round_chevron_right_black_24"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:textSize="16sp"
+        android:text="@string/preferences_notification_title" />
+
+    <RelativeLayout
+        android:id="@+id/rlNotificationTime"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/ivNotificationTimeIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/round_time_black_24"/>
+
+        <TextView
+            android:id="@+id/tvNotificationTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@id/ivNotificationTimeIcon"
+            android:focusableInTouchMode="false"
+            android:text="@string/preferences_notification_time"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvNotificationTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="16dp"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical|end"
+            android:layout_toStartOf="@id/ivChevronIcon"
+            android:layout_toEndOf="@id/tvNotificationTime"
+            android:focusableInTouchMode="false"
+            android:hint="@string/preferences_notification_time"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="16sp"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/ivChevronIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/round_chevron_right_black_24"/>
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tvLicenses"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:textSize="16sp"
+        android:layout_gravity="center_vertical"
+        android:drawableStart="@drawable/round_license_black"
+        android:drawableEnd="@drawable/round_chevron_right_black_24"
+        android:drawablePadding="9.95dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="@string/settings_licenses" />
+
+</LinearLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="270dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_background"
+    android:divider="@drawable/dialog_divider_horizontal"
+    android:orientation="vertical"
+    android:showDividers="middle"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    >
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextInputLayoutOutlinedBox"
+        app:hintTextColor="@color/deepGrey"
+        app:boxStrokeColor="@color/deepGrey"
+        app:endIconMode="clear_text"
+        >
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/brandEditText"
+            android:theme="@style/TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textCursorDrawable="@null"
+            android:textColor="@color/black"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>
